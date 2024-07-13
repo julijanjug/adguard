@@ -2,12 +2,7 @@
 	<div
 		class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
 	>
-		<header
-			class="w-full py-4 bg-white shadow-md flex justify-between items-center px-8"
-		>
-			<div class="text-2xl font-bold">HANNAH</div>
-			<a href="#" class="text-gray-500">Help</a>
-		</header>
+		<TopHeader />
 
 		<main class="flex flex-col items-center justify-center flex-grow px-8">
 			<h1 class="text-3xl font-bold mb-4 text-center">
@@ -56,8 +51,13 @@
 </template>
 
 <script>
+import TopHeader from "./../components/TopHeader.vue";
+
 export default {
 	name: "HomePage",
+	components: {
+		TopHeader,
+	},
 	methods: {
 		startScan() {
 			this.$router.push({ name: "Scan" });
