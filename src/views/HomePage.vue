@@ -30,7 +30,7 @@
 				>
 					<svg
 						class="h-5 w-5 mr-1 flex-shrink-0"
-						viewBox="0 0 24 24"
+						viewBox="0 -1 18 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 					>
