@@ -1,23 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '@/views/HomePage.vue';
-import ScanPage from '@/views/ScanPage.vue';
+import HomeView from '@/views/HomeView.vue';
+import ScanView from '@/views/ScanView.vue';
+import HelpView from '@/views/HelpView.vue';
 import setTitle from '@/utils/setTitle';
 
 const routes = [
     {
         path: '/',
         name: 'Home',
-        component: HomePage,
+        component: HomeView,
         meta: {
-            title: 'AdGuard Home'
+            title: 'Home | AdGuard'
         }
     },
     {
         path: '/scan',
         name: 'Scan',
-        component: ScanPage,
+        component: ScanView,
         meta: {
-            title: 'AdGuard Scan'
+            title: 'Scan | AdGuard'
+        }
+    },
+    {
+        path: '/help',
+        name: 'Help',
+        component: HelpView,
+        meta: {
+            title: 'Help | AdGuard '
         }
     },
 ];

@@ -54,7 +54,7 @@
 import TopHeader from "./../components/TopHeader.vue";
 
 export default {
-	name: "HomePage",
+	name: "HomeView",
 	components: {
 		TopHeader,
 	},

@@ -2,10 +2,20 @@
 	<header
 		class="w-full py-4 bg-white shadow-md flex justify-between items-center px-8"
 	>
-		<router-link to="/" class="text-2xl font-bold" @click.prevent="navigateHome"
-			>HANNAH</router-link
+		<router-link
+			to="/"
+			class="text-2xl font-bold"
+			@click.prevent="navigateTo('/')"
 		>
-		<a href="#" class="text-gray-500">Help</a>
+			HANNAH
+		</router-link>
+		<router-link
+			to="/help"
+			class="text-gray-500"
+			@click.prevent="navigateTo('/help')"
+		>
+			Help
+		</router-link>
 	</header>
 </template>
 
@@ -17,17 +27,15 @@ export default {
 	setup() {
 		const router = useRouter();
 
-		const navigateHome = () => {
-			router.push({ path: "/" }); // Replace '/' with your home route if it's different
+		const navigateTo = (path) => {
+			router.push(path);
 		};
 
 		return {
-			navigateHome,
+			navigateTo,
 		};
 	},
 };
 </script>
 
-<style scoped>
-/* Add any scoped styles here */
-</style>
+<style scoped></style>
