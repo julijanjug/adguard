@@ -26,22 +26,7 @@
                 <v-col cols="9" v-if="placementInfo">
                     <v-row v-if="alertMessage">
                         <v-col cols="12">
-                            <div
-                                class="bg-danger-red text-charcoal h-10 flex items-center justify-between cursor-pointer rounded-md">
-                                <div class="flex items-center">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="ml-4"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M15.8047 4.49133L11.5087 0.195333C11.3837 0.0703004 11.2141 3.77583e-05 11.0373 0L4.96267 0C4.78587 3.77583e-05 4.61633 0.0703004 4.49133 0.195333L0.195333 4.49133C0.0703004 4.61633 3.77583e-05 4.78587 0 4.96267L0 11.0373C3.77583e-05 11.2141 0.0703004 11.3837 0.195333 11.5087L4.49133 15.8047C4.61633 15.9297 4.78587 16 4.96267 16H11.0373C11.2141 16 11.3837 15.9297 11.5087 15.8047L15.8047 11.5087C15.9297 11.3837 16 11.2141 16 11.0373V4.96267C16 4.78587 15.9297 4.61633 15.8047 4.49133ZM14.6667 10.7613L10.7613 14.6667H5.23867L1.33333 10.7613V5.23867L5.23867 1.33333H10.7613L14.6667 5.23867V10.7613Z"
-                                            fill="#FF3448" />
-                                        <path
-                                            d="M10.2085 2.6665H5.79117L2.6665 5.79117V10.2085L5.79117 13.3332H10.2085L13.3332 10.2085V5.79117L10.2085 2.6665ZM9.99984 8.6665H5.99984C5.82303 8.6665 5.65346 8.59627 5.52843 8.47124C5.40341 8.34622 5.33317 8.17665 5.33317 7.99984C5.33317 7.82303 5.40341 7.65346 5.52843 7.52843C5.65346 7.40341 5.82303 7.33317 5.99984 7.33317H9.99984C10.1766 7.33317 10.3462 7.40341 10.4712 7.52843C10.5963 7.65346 10.6665 7.82303 10.6665 7.99984C10.6665 8.17665 10.5963 8.34622 10.4712 8.47124C10.3462 8.59627 10.1766 8.6665 9.99984 8.6665Z"
-                                            fill="#FF3448" />
-                                    </svg>
-
-                                    <div class="ml-2 text-sm">{{ alertMessage }}</div>
-                                </div>
-                            </div>
+                            <AlertBanner :alertMessage="alertMessage" />
                         </v-col>
                     </v-row>
                     <v-row class="mt-2">
@@ -120,7 +105,11 @@
                     </v-row>
 
                     <hr class="mb-4 mt-6 border-t border-gray-300">
-                    <h3 class="mb-3 text-xl font-semibold">Requirements</h3>
+                    <v-row class="flex items-center justify-between mb-1">
+                        <v-col>
+                            <h3 class=" text-xl font-semibold">Requirements</h3>
+                        </v-col>
+                    </v-row>
                     <!-- Compliance Issues List -->
                     <div class="overflow-hidden rounded-lg border shadow-lg">
                         <v-card outlined class="mt-0 first:mt-2 rounded-none border-b" v-for="(issue, index) in issues"
@@ -162,6 +151,7 @@
 import TopHeader from './../components/TopHeader.vue';
 import MyGauge from '@/components/MyGauge.vue';
 import MyLinearGauge from '@/components/MyLinearGauge.vue';
+import AlertBanner from '@/components/AlertBanner.vue';
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -171,6 +161,7 @@ export default {
         TopHeader,
         MyGauge,
         MyLinearGauge,
+        AlertBanner,
     },
     setup() {
         const route = useRoute();
