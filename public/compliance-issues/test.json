@@ -5,6 +5,7 @@
       "adFormat": "Universal Banner",
       "creativeSize": "300x600"
     },
+    "alertMessage": "AdGuard detected 9 compliance issues.",
     "passedCount": 79,
     "failedCount": 20,
     "accessibilityRate": 54,

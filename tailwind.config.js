@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       colors: {
         'fog-gray': '#F4F5F6',
+        'danger-red': '#FFC2C8',
+        'charcoal': '#454555',
       },
     },
   },
