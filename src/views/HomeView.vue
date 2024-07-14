@@ -1,5 +1,5 @@
 <template>
-	<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+	<div class="min-h-screen flex flex-col items-center justify-center">
 		<TopHeader />
 
 		<main class="flex flex-col items-center justify-center flex-grow px-8">
@@ -9,12 +9,12 @@
 			<p class="text-gray-700 mb-8 text-center">
 				Scan your generated tag to learn if it meets conformance standards.
 			</p>
-			<div class="flex items-center w-full max-w-md bg-white p-2 rounded-lg shadow">
+			<div class="flex items-center w-full max-w-md bg-fog-gray p-2 rounded-lg shadow">
 				<input
 					v-model="tag"
 					type="text"
 					placeholder="Paste tag"
-					class="w-full p-3 border-0 rounded-l-lg focus:outline-none focus:ring-0 text-gray-600 h-12"
+					class="w-full p-3 border-0 rounded-lg focus:outline-none focus:ring-0 text-gray-600 h-12 bg-white mr-2"
 				/>
 				<button
 					@click="startScan"

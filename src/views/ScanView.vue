@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
+		class="min-h-screen flex flex-col items-center justify-center"
 	>
 		<TopHeader />
 		<main class="flex flex-col items-center justify-center flex-grow px-8">

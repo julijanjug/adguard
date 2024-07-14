@@ -36,6 +36,10 @@ export default {
 			type: Number,
 			default: 30, // Default width
 		},
+		color: {
+			type: String,
+			default: "default", // Default color
+		},
 	},
 	data() {
 		return {
@@ -46,6 +50,7 @@ export default {
 	},
 	computed: {
 		gaugeColor() {
+			if(this.color !== "default") return this.color;
 			if (this.animatedValue >= 80) return "success";
 			if (this.animatedValue >= 50) return "warning";
 			return "error";
