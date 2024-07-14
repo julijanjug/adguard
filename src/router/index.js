@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import ScanView from '@/views/ScanView.vue';
 import HelpView from '@/views/HelpView.vue';
+import ComplianceView from '@/views/ComplianceView.vue';
 import setTitle from '@/utils/setTitle';
 
 const routes = [
@@ -28,6 +29,15 @@ const routes = [
         meta: {
             title: 'Help | AdGuard '
         }
+    },
+    {
+        path: '/compliance/:id',
+        name: 'Compliance',
+        component: ComplianceView,
+        meta: {
+            title: 'Compliance | AdGuard '
+        },
+        props: true,
     },
 ];
 

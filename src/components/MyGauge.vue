@@ -2,13 +2,20 @@
 	<v-container class="flex flex-col items-center justify-center">
 		<v-progress-circular
 			:model-value="animatedValue"
-			:size="150"
-			:width="30"
+			:size="size"
+			:width="width"
 			:rotate="-90"
 			:color="gaugeColor"
 			bg-color="#hhhhhh"
 		>
-			<template v-slot:default>{{ animatedValue }} / 100</template>
+			<template v-slot:default>
+				<slot v-if="$slots.default">
+					<slot />
+				</slot>
+				<template v-else>
+					{{ animatedValue }} / 100
+				</template>
+			</template>
 		</v-progress-circular>
 	</v-container>
 </template>
@@ -20,6 +27,14 @@ export default {
 		value: {
 			type: Number,
 			required: true,
+		},
+		size: {
+			type: Number,
+			default: 150, // Default size
+		},
+		width: {
+			type: Number,
+			default: 30, // Default width
 		},
 	},
 	data() {

@@ -1,7 +1,5 @@
 <template>
-	<div
-		class="min-h-screen flex flex-col items-center justify-center bg-gray-100"
-	>
+	<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
 		<TopHeader />
 
 		<main class="flex flex-col items-center justify-center flex-grow px-8">
@@ -11,10 +9,9 @@
 			<p class="text-gray-700 mb-8 text-center">
 				Scan your generated tag to learn if it meets conformance standards.
 			</p>
-			<div
-				class="flex items-center w-full max-w-md bg-white p-2 rounded-lg shadow"
-			>
+			<div class="flex items-center w-full max-w-md bg-white p-2 rounded-lg shadow">
 				<input
+					v-model="tag"
 					type="text"
 					placeholder="Paste tag"
 					class="w-full p-3 border-0 rounded-l-lg focus:outline-none focus:ring-0 text-gray-600 h-12"
@@ -46,6 +43,7 @@
 					<span class="ml-1"> Start AdGuard Scan </span>
 				</button>
 			</div>
+			<div v-if="validationError" class="text-red-500 mt-2">{{ validationError }}</div>
 		</main>
 	</div>
 </template>
@@ -58,9 +56,20 @@ export default {
 	components: {
 		TopHeader,
 	},
+	data() {
+		return {
+			tag: '',
+			validationError: '',
+		};
+	},
 	methods: {
 		startScan() {
-			this.$router.push({ name: "Scan" });
+			if (!this.tag) {
+				this.validationError = 'Please enter a tag before starting the scan. (use "test")';
+				return;
+			}
+			this.validationError = '';
+			this.$router.push({ name: "Compliance", params: { id: this.tag }});
 		},
 	},
 };

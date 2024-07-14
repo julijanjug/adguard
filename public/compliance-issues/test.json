@@ -1,0 +1,64 @@
+{
+    "placementInfo": {
+      "placementId": "99xyz876",
+      "creativeId": "123abc45",
+      "adFormat": "Universal Banner",
+      "creativeSize": "300x600"
+    },
+    "passedCount": 73,
+    "failedCount": 20,
+    "accessibilityRate": 54,
+    "brandSafetyRate": 16,
+    "adSizeFormatRate": 24,
+    "highSeverityRate": 54,
+    "midSeverityRate": 24,
+    "lowSeverityRate": 16,
+    "issues": [
+      {
+        "title": "Improper use of retina (high-DPI) sizes",
+        "issue": "Lack of high-resolution sizes for Retina or high-DPI displays.",
+        "recommendation": "300x600 banners must be designed at 2x resolution (640x1000px) to maintain image clarity on high-resolution screens."
+      },
+      {
+        "title": "Missing AdChoice icon",
+        "issue": "AdChoices icon not present in the ad.",
+        "recommendation": "Banner ads on Amazon DSP Mobile must contain an AdChoices label in one corner, which Amazon will automatically overlay on your creative. Add the standardized AdChoices icon (blue triangle with 'i' inside)."
+      },
+      {
+        "title": "Missing disclaimer",
+        "issue": "Banners that link to Amazon must include an Amazon logo or a textual reference to Amazon, as outlined in our Creative Acceptance Policy.",
+        "recommendation": "Add the standard disclaimer: 'Terms and conditions apply. See website for details.'"
+      },
+      {
+        "title": "Accessibility non-compliance",
+        "issue": "Insufficient color contrast for readability. Font size should not be smaller than 16pt (at 2x resolution) and must be legible when viewed on device.",
+        "recommendation": "Increase contrast ratio between button background (#00E0E0) and text color (#787878) to meet WCAG 2.1 AA standards. Suggested new text color: #000000."
+      },
+      {
+        "title": "Incomplete regulatory information",
+        "issue": "The advertiser's logo or name is missing in mobile banner ads.",
+        "recommendation": "Include the advertiser's logo or name in mobile banner ads."
+      },
+      {
+        "title": "Excessive text",
+        "issue": "Text should be minimal.",
+        "recommendation": "Remove any unnecessary or extraneous language. Use of absolute terms not permitted by regulations. Reduce text to fit within the 50-character limit."
+      },
+      {
+        "title": "Non-compliant background color",
+        "issue": "Use of pure white (#FFFFFF) background, which blends with Amazon's site.",
+        "recommendation": "Creative should have a clearly visible non-white 1-pixel border or a dark or high contrast background color that distinguishes it from a site's content."
+      },
+      {
+        "title": "Non-compliant color usage",
+        "issue": "Use of unapproved color in logo in header image, top-left corner.",
+        "recommendation": "Replace current color (#FF3733) with approved brand color (#0033CC)."
+      },
+      {
+        "title": "Excessive video length",
+        "issue": "Video exceeds the maximum allowed duration.",
+        "recommendation": "Trim video to meet platform requirements (e.g., 15 or 30 seconds for most formats). Animation (e.g., animated GIF files) is permitted but not recommended in Amazon DSP mobile banners."
+      }
+    ]
+  }
+  
