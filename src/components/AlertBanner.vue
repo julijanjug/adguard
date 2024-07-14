@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-charcoal h-10 flex items-center justify-between cursor-pointer rounded-md shadow-md bg-danger-red"
+        <div class="text-charcoal h-10 flex items-center justify-between cursor-pointer rounded-md shadow-md "
             :class="`bg-${color}`">
             <div class="flex items-center">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="ml-4"
