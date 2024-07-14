@@ -4,7 +4,7 @@
         <main class="flex flex-col items-center justify-center flex-grow px-8">
             <v-row class="mt-4 w-full max-w-7xl">
                 <v-col cols="12" v-if="!placementInfo">
-                    <v-card outlined class="w-full text-center shadow-lg rounded-lg border border-fog-gray">
+                    <v-card class="w-full text-center shadow-lg rounded-lg border border-fog-gray ">
                         <v-card-text class="text-xl text-gray-600">
                             Sorry, this creative wasn't found.
                         </v-card-text>
@@ -12,7 +12,7 @@
                 </v-col>
 
                 <v-col cols="3" v-if="placementInfo">
-                    <v-card outlined class="shadow-md rounded-lg border border-fog-gray">
+                    <v-card outlined class="shadow-md rounded-lg border border-fog-gray sticky top-20">
                         <v-card-title>Placement info</v-card-title>
                         <v-card-text>
                             <div>Placement ID: <strong>{{ placementInfo.placementId }}</strong></div>
@@ -31,7 +31,7 @@
                     </v-row>
                     <v-row class="mt-2">
                         <v-col>
-                            <v-card outlined class="h-100 shadow-lg rounded-lg border border-fog-gray">
+                            <v-card class="h-100 shadow-lg rounded-lg border border-fog-gray">
                                 <v-card-title class="pb-2">{{ totalTests }} Test run</v-card-title>
                                 <v-card-text>
                                     <v-row>
@@ -52,7 +52,7 @@
                             </v-card>
                         </v-col>
                         <v-col>
-                            <v-card outlined class="h-100 shadow-lg rounded-lg border border-fog-gray">
+                            <v-card class="h-100 shadow-lg rounded-lg border border-fog-gray">
                                 <v-card-title class="pb-2">Criteria</v-card-title>
                                 <v-card-text class="mt-2 mx-2">
                                     <v-row class="flex items-center">
@@ -78,7 +78,7 @@
                         </v-col>
 
                         <v-col>
-                            <v-card outlined class="h-100 shadow-lg rounded-lg border border-fog-gray">
+                            <v-card class="h-100 shadow-lg rounded-lg border border-fog-gray">
                                 <v-card-title class="pb-2">Severity</v-card-title>
                                 <v-card-text class="mt-2 mx-2">
                                     <v-row class="flex items-center">
@@ -112,7 +112,7 @@
                     </v-row>
                     <!-- Compliance Issues List -->
                     <div class="overflow-hidden rounded-lg border shadow-lg">
-                        <v-card outlined class="mt-0 first:mt-2 rounded-none border-b" v-for="(issue, index) in issues"
+                        <v-card class="mt-0 first:mt-2 rounded-none border-b" v-for="(issue, index) in issues"
                             :key="issue.title">
                             <!-- Custom top bar with smaller height, custom color, and centered content -->
                             <div class="bg-fog-gray text-gray-800 h-10 flex items-center justify-between cursor-pointer"
