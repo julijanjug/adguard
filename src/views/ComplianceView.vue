@@ -12,7 +12,7 @@
                 </v-col>
 
                 <v-col cols="3" v-if="placementInfo">
-                    <v-card outlined>
+                    <v-card outlined class="shadow-md rounded-lg border border-fog-gray">
                         <v-card-title>Placement info</v-card-title>
                         <v-card-text>
                             <div>Placement ID: <strong>{{ placementInfo.placementId }}</strong></div>
