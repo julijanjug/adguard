@@ -26,7 +26,7 @@
                 <v-col cols="9" v-if="placementInfo">
                     <v-row v-if="alertMessage">
                         <v-col cols="12">
-                            <AlertBanner :alertMessage="alertMessage" />
+                            <AlertBanner :alertMessage="alertMessage" color="danger-red" />
                         </v-col>
                     </v-row>
                     <v-row class="mt-2">
