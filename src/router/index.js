@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
-import ScanView from '@/views/ScanView.vue';
 import HelpView from '@/views/HelpView.vue';
 import ComplianceView from '@/views/ComplianceView.vue';
 import setTitle from '@/utils/setTitle';
@@ -12,14 +11,6 @@ const routes = [
         component: HomeView,
         meta: {
             title: 'Home | AdGuard'
-        }
-    },
-    {
-        path: '/scan',
-        name: 'Scan',
-        component: ScanView,
-        meta: {
-            title: 'Scan | AdGuard'
         }
     },
     {

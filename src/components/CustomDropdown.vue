@@ -39,6 +39,12 @@ export default {
             ]
         };
     },
+    props: {
+        disabled: {
+            type: Boolean,
+            default: false,
+        },
+    },
     computed: {
         groupedOptions() {
             // Group options by 'group' property
@@ -63,6 +69,7 @@ export default {
     },
     methods: {
         toggleDropdown() {
+            if(this.disabled) return;
             this.isOpen = !this.isOpen;
         },
         handleOptionClick(option) {
