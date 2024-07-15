@@ -10,6 +10,7 @@ module.exports = {
         'fog-gray': '#F4F5F6',
         'danger-red': '#FFC2C8',
         'charcoal': '#454555',
+        'slate': '#2D2D3B',
       },
     },
   },

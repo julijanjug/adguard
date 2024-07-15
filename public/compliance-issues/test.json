@@ -1,9 +1,6 @@
 {
     "placementInfo": {
-      "placementId": "99xyz876",
-      "creativeId": "123abc45",
-      "adFormat": "Universal Banner",
-      "creativeSize": "300x600"
+      "placementName": "PlacementName_SharkTank_AdGuard_072024"
     },
     "alertMessage": "AdGuard detected 9 compliance issues.",
     "passedCount": 83,

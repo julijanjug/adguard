@@ -1,8 +1,9 @@
 <template>
     <div class="min-h-screen flex flex-col items-center">
         <TopHeader />
+        <ActionBar v-if="placementInfo" :placementInfo="placementInfo"></ActionBar>
         <main class="flex flex-col items-center justify-center flex-grow px-8">
-            <v-row class="mt-4 w-full max-w-7xl">
+            <v-row class="mt-4 w-full max-w-7xl justify-center">
                 <v-col cols="12" v-if="!placementInfo">
                     <v-card class="w-full text-center shadow-lg rounded-lg border border-fog-gray ">
                         <v-card-text class="text-xl text-gray-600">
@@ -11,19 +12,7 @@
                     </v-card>
                 </v-col>
 
-                <v-col cols="3" v-if="placementInfo">
-                    <v-card outlined class="shadow-md rounded-lg border border-fog-gray sticky top-20">
-                        <v-card-title>Placement info</v-card-title>
-                        <v-card-text>
-                            <div>Placement ID: <strong>{{ placementInfo.placementId }}</strong></div>
-                            <div>Creative ID: <strong>{{ placementInfo.creativeId }}</strong></div>
-                            <div>Ad format: <strong>{{ placementInfo.adFormat }}</strong></div>
-                            <div>Creative size: <strong>{{ placementInfo.creativeSize }}</strong></div>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-
-                <v-col cols="9" v-if="placementInfo">
+                <v-col cols="10" v-if="placementInfo">
                     <v-row v-if="alertMessage">
                         <v-col cols="12">
                             <AlertBanner :alertMessage="alertMessage" class="bg-danger-red rounded-md" />
@@ -149,6 +138,7 @@
 
 <script>
 import TopHeader from './../components/TopHeader.vue';
+import ActionBar from './../components/ActionBar.vue';
 import MyGauge from '@/components/MyGauge.vue';
 import MyLinearGauge from '@/components/MyLinearGauge.vue';
 import AlertBanner from '@/components/AlertBanner.vue';
@@ -162,6 +152,7 @@ export default {
         MyGauge,
         MyLinearGauge,
         AlertBanner,
+        ActionBar,
     },
     setup() {
         const route = useRoute();
@@ -192,6 +183,8 @@ export default {
                 if (!response.ok) {
                     throw new Error('Creative not found');
                 }
+                // eslint-disable-next-line no-debugger
+                // debugger;
                 const data = await response.json();
                 issues.value = data.issues;
                 placementInfo.value = data.placementInfo;
