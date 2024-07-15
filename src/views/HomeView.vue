@@ -1,7 +1,6 @@
 <template>
 	<div class="min-h-screen flex flex-col items-center justify-center">
 		<TopHeader />
-
 		<main class="flex flex-col items-center justify-center flex-grow px-8 py-12">
 			<h1 class="text-4xl font-bold mb-4 text-center">
 				Real time creative compliance scanning and monitoring
@@ -11,7 +10,7 @@
 			</p>
 			<div class="w-full max-w-3xl mt-6 relative">
 				<textarea v-model="tag"
-					placeholder="Paste the generated tag here and select the guideline before clicking the 'Start AdGuard Scan' button."
+					placeholder="Paste your Ad tag here and select the creative compliance type before clicking the 'Start AdGuard Scan' button."
 					class="w-full h-80 p-4 rounded-lg focus:outline-none focus:ring-2 text-gray-700 resize-none bg-fog-gray placeholder-center"
 					:class="{ 'blur': scanInProgress }"></textarea>
 				<Transition>

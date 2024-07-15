@@ -2,7 +2,7 @@
     <div class="select-container w-full">
         <div class="custom-select rounded-lg h-11" @click="toggleDropdown">
             <div class="selected-option">
-                {{ selectedOption ? selectedOption.label : 'Select Guideline' }}
+                {{ selectedOption ? selectedOption.label : 'Select Compliance Type' }}
             </div>
             <div class="carrot-icon" :class="{ 'rotate-90': !isOpen }">
                 <svg class="h-3 w-3" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
