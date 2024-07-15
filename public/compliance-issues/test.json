@@ -6,7 +6,7 @@
       "creativeSize": "300x600"
     },
     "alertMessage": "AdGuard detected 9 compliance issues.",
-    "passedCount": 79,
+    "passedCount": 83,
     "failedCount": 20,
     "accessibilityRate": 54,
     "brandSafetyRate": 16,
