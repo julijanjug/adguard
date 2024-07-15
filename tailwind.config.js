@@ -11,6 +11,8 @@ module.exports = {
         'danger-red': '#FFC2C8',
         'charcoal': '#454555',
         'slate': '#2D2D3B',
+        'cement': '#D8DADF',
+        'blue': '#1966FF',
       },
     },
   },

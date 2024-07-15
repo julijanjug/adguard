@@ -41,6 +41,7 @@
 					:class="{ 'bg-purple-500 cursor-pointer': !isButtonDisabled, 'bg-gray-400 cursor-not-allowed': isButtonDisabled }"
 					:disabled="isButtonDisabled || scanInProgress"
 					class="flex items-center text-white text-sm py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ml-2 w-4/12">
+					<!-- Magic wand icon -->
 					<svg v-if="!scanInProgress" class="h-5 w-5 mr-1 flex-shrink-0" viewBox="0 -1 18 18" fill="none"
 						xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_37_170)">
@@ -54,6 +55,7 @@
 							</clipPath>
 						</defs>
 					</svg>
+					<!-- Spinner icon -->
 					<svg v-if="scanInProgress" class="animate-spin h-5 w-5 mr-1 flex-shrink-0" viewBox="0 0 24 24"
 						fill="none" xmlns="http://www.w3.org/2000/svg">
 						<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">

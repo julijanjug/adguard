@@ -95,8 +95,20 @@
 
                     <hr class="mb-4 mt-6 border-t border-gray-300">
                     <v-row class="flex items-center justify-between mb-1">
-                        <v-col>
-                            <h3 class=" text-xl font-semibold">Requirements</h3>
+                        <v-col cols="auto">
+                            <h3 class="text-xl font-semibold">Requirements</h3>
+                        </v-col>
+                        <v-col cols="auto" class="text-right mr-1">
+                            <MyButton buttonText="Export">
+                                <template v-slot:icon>
+                                    <svg class="h-3 w-3 mr-2 flex-shrink-0" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.5 1C8.22386 1 8 1.22386 8 1.5C8 1.77614 8.22386 2 8.5 2H13.2929L7.14645 8.14645C6.95118 8.34171 6.95118 8.65829 7.14645 8.85355C7.34171 9.04882 7.65829 9.04882 7.85355 8.85355L14 2.70711V7.5C14 7.77614 14.2239 8 14.5 8C14.7761 8 15 7.77614 15 7.5V1.5C15 1.22386 14.7761 1 14.5 1H8.5ZM2.5 4.5C2.22386 4.5 2 4.72386 2 5V13.5C2 13.7761 2.22386 14 2.5 14H11C11.2761 14 11.5 13.7761 11.5 13.5V9.25C11.5 8.97386 11.7239 8.75 12 8.75C12.2761 8.75 12.5 8.97386 12.5 9.25V13.5C12.5 14.3284 11.8284 15 11 15H2.5C1.67157 15 1 14.3284 1 13.5V5C1 4.17157 1.67157 3.5 2.5 3.5H6.75C7.02614 3.5 7.25 3.72386 7.25 4C7.25 4.27614 7.02614 4.5 6.75 4.5H2.5Z"
+                                            fill="#454555" />
+                                    </svg>
+                                </template>
+                            </MyButton>
                         </v-col>
                     </v-row>
                     <!-- Compliance Issues List -->
@@ -140,6 +152,7 @@
 import TopHeader from './../components/TopHeader.vue';
 import ActionBar from './../components/ActionBar.vue';
 import MyGauge from '@/components/MyGauge.vue';
+import MyButton from '@/components/MyButton.vue';
 import MyLinearGauge from '@/components/MyLinearGauge.vue';
 import AlertBanner from '@/components/AlertBanner.vue';
 import { ref, computed } from 'vue';
@@ -153,6 +166,7 @@ export default {
         MyLinearGauge,
         AlertBanner,
         ActionBar,
+        MyButton,
     },
     setup() {
         const route = useRoute();
