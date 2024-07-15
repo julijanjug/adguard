@@ -18,9 +18,9 @@
 				<CustomDropdown :value="selectedOption" @option-selected="handleOptionSelected"></CustomDropdown>
 				<button @click="startScan"
 					:class="{ 'bg-purple-500 cursor-pointer': !isButtonDisabled, 'bg-gray-400 cursor-not-allowed': isButtonDisabled }"
-					:disabled="isButtonDisabled"
+					:disabled="isButtonDisabled || scanInProgress"
 					class="flex items-center text-white text-sm py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ml-2 w-4/12">
-					<svg class="h-5 w-5 mr-1 flex-shrink-0" viewBox="0 -1 18 18" fill="none"
+					<svg v-if="!scanInProgress" class="h-5 w-5 mr-1 flex-shrink-0" viewBox="0 -1 18 18" fill="none"
 						xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_37_170)">
 							<path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,7 +33,14 @@
 							</clipPath>
 						</defs>
 					</svg>
-					<span class="ml-1">Start AdGuard Scan</span>
+					<svg v-if="scanInProgress" class="animate-spin h-5 w-5 mr-1 flex-shrink-0" viewBox="0 0 24 24"
+						fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+						<path class="opacity-75" fill="currentColor"
+							d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.96 7.96 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+						</path>
+					</svg>
+					<span class="ml-1">{{ scanInProgress ? 'Scanning...' : 'Start AdGuard Scan' }}</span>
 				</button>
 			</div>
 			<div v-if="validationError" class="text-red-500 mt-2">{{ validationError }}</div>
@@ -56,6 +63,7 @@ export default {
 			tag: '',
 			validationError: '',
 			selectedOption: null,
+			scanInProgress: false,
 		};
 	},
 	computed: {
@@ -73,8 +81,16 @@ export default {
 				this.validationError = 'Please select a guideline before starting the scan.';
 				return;
 			}
-			this.validationError = '';
-			this.$router.push({ name: "Compliance", params: { id: this.tag, guideline: this.selectedOption.value } });
+
+			// Set scan in progress
+			this.scanInProgress = true;
+
+			// Simulate a delay of 1 second
+			setTimeout(() => {
+				this.validationError = '';
+				this.scanInProgress = false;
+				this.$router.push({ name: "Compliance", params: { id: this.tag, guideline: this.selectedOption.value } });
+			}, 1200);
 		},
 		handleOptionSelected(option) {
 			this.selectedOption = option;
@@ -90,4 +106,5 @@ export default {
 	transform: translateY(8rem) translateX(9rem);
 	width: 60%;
 }
+
 </style>
