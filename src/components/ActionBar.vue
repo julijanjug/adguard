@@ -1,6 +1,6 @@
 <template>
     <header class="action-bar w-full border-b py-4 sticky z-50 bg-white">
-        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-full">
+        <div class="max-w-12xl mx-auto px-8 flex justify-between items-center h-full">
             <div class="text-slate text-lg font-semibold">{{ placementInfo.placementName }}</div>
             <div class="flex space-x-3">
                 <MyButton buttonText="Contact admin for help" />

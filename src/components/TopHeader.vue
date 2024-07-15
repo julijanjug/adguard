@@ -1,6 +1,6 @@
 <template>
 	<header class="header w-full py-4 bg-fog-gray border-b sticky top-0 z-50">
-		<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-full">
+		<div class="max-w-12xl mx-auto px-8 flex justify-between items-center h-full">
 			<router-link to="/" class="text-2xl font-bold" @click.prevent="navigateTo('/')">
 				<svg width="120" height="18" viewBox="0 0 94 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
