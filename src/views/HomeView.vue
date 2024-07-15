@@ -118,7 +118,7 @@ export default {
 				this.validationError = '';
 				this.scanInProgress = false;
 				this.$router.push({ name: "Compliance", params: { id: this.tag, guideline: this.selectedOption.value } });
-			}, 2500);
+			}, 2100);
 		},
 		handleOptionSelected(option) {
 			this.selectedOption = option;

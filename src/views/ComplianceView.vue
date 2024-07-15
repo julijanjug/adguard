@@ -4,7 +4,7 @@
         <ActionBar v-if="placementInfo" :placementInfo="placementInfo"></ActionBar>
         <main class="flex flex-col items-center justify-center flex-grow px-8">
             <v-row class="mt-4 w-full max-w-7xl justify-center">
-                <v-col cols="12" v-if="!placementInfo">
+                <v-col cols="12" v-if="!placementInfo && fetchError">
                     <v-card class="w-full text-center shadow-lg rounded-lg border border-fog-gray ">
                         <v-card-text class="text-xl text-gray-600">
                             Sorry, this creative wasn't found.
