@@ -15,15 +15,11 @@
 					class="w-full h-80 p-4 rounded-lg focus:outline-none focus:ring-2 text-gray-700 resize-none bg-fog-gray placeholder-center"></textarea>
 			</div>
 			<div class="w-full max-w-3xl flex justify-between items-center mt-2">
-				<!-- <select v-model="guideline"
-					class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 text-gray-700 mr-2 h-15">
-					<option value="" disabled>Select Guideline</option>
-					<option value="guideline1">Guideline 1</option>
-					<option value="guideline2">Guideline 2</option>
-				</select> -->
 				<CustomDropdown :value="selectedOption" @option-selected="handleOptionSelected"></CustomDropdown>
 				<button @click="startScan"
-					class="flex items-center bg-purple-500 text-white text-sm py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ml-2 w-4/12">
+					:class="{ 'bg-purple-500 cursor-pointer': !isButtonDisabled, 'bg-gray-400 cursor-not-allowed': isButtonDisabled }"
+					:disabled="isButtonDisabled"
+					class="flex items-center text-white text-sm py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ml-2 w-4/12">
 					<svg class="h-5 w-5 mr-1 flex-shrink-0" viewBox="0 -1 18 18" fill="none"
 						xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_37_170)">
@@ -58,10 +54,14 @@ export default {
 	data() {
 		return {
 			tag: '',
-			guideline: '',
 			validationError: '',
-			selectedOption: '',
+			selectedOption: null,
 		};
+	},
+	computed: {
+		isButtonDisabled() {
+			return !(this.tag && this.selectedOption);
+		}
 	},
 	methods: {
 		startScan() {
@@ -89,6 +89,5 @@ export default {
 	text-align: center;
 	transform: translateY(8rem) translateX(9rem);
 	width: 60%;
-
 }
 </style>
