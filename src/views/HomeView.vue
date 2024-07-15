@@ -32,7 +32,7 @@
 									</clipPath>
 								</defs>
 							</svg>
-							<p class="text-md text-purple-500">Scanning...</p>
+							<p class="text-xl text-purple-500">Scanning...</p>
 						</div>
 					</div>
 				</Transition>
@@ -135,7 +135,7 @@ export default {
 	width: 60%;
 }
 .blur {
-	filter: blur(2px);
+	filter: blur(px);
 }
 .v-enter-active,
 .v-leave-active {
