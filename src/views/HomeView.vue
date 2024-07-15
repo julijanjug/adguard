@@ -117,7 +117,8 @@ export default {
 			setTimeout(() => {
 				this.validationError = '';
 				this.scanInProgress = false;
-				this.$router.push({ name: "Compliance", params: { id: this.tag, guideline: this.selectedOption.value } });
+				// this.$router.push({ name: "Compliance", params: { id: this.tag, guideline: this.selectedOption.value } });
+				this.$router.push({ name: "Compliance", params: { id: 'test', guideline: this.selectedOption.value } });
 			}, 2100);
 		},
 		handleOptionSelected(option) {
